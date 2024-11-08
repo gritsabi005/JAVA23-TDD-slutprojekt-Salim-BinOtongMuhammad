@@ -1,8 +1,17 @@
+package org.example;
+
+import Interfaces.BankInterface;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class Bank implements BankInterface {
     private Map<String, User> users = new HashMap<>();
+
+    public User addUser(User user){
+        users.put(user.getId(), user);
+        return user;
+    }
 
     public User getUserById(String id) {
         return users.get(id);
